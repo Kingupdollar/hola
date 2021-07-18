@@ -50,12 +50,27 @@
       ];
       
       
-      function write() {
-        let dbLocation = firebase.database().ref('/deck/flashcards'); 
-        dbLocation.set(myFlashcards);
-      }
-      write();
+      //store
+      let dbLocation = firebase.database().ref('deck/flashcards'); 
+      dbLocation.set(myFlashcards);  
       
+      
+      //update
+      let updateQ = {
+        question: "hahaha",
+        answer: "hehehe"
+      }
+      db.ref('deck/flashcards/0').update(updateQ)
+      
+      
+      //retrieve
+      let fc = firebase.database().ref('deck/flashcards');
+      let jsonString;
+      fc.on("value", function(retrieve) {
+        let queryData = retrieve.val();
+        jsonString = JSON.stringify(queryData);
+      });
+      console.log (' JSON string:' + jsonString )
       
     </script>
   </body>
