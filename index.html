@@ -48,7 +48,7 @@
           "answer": "Hummingbird"
         }
       ];
-      let dbLocation = firebase.database().ref(); 
+      let dbLocation = firebase.database('deck/flashcards').ref(); 
       dbLocation.set(myFlashcards);
   </body>
 </html>
