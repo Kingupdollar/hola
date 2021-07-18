@@ -27,7 +27,7 @@
           "answer": "Hummingbird"
         }
       ];
-      firebase.database().ref(); 
-      firebase.database().set(myFlashcards);
+      let dbLocation = firebase.database().ref(); 
+      dbLocation.set(myFlashcards);
   </body>
 </html>
